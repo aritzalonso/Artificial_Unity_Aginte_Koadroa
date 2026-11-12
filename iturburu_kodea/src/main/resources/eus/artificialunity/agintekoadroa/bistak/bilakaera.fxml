@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eus.artificialunity.agintekoadroa.osagaiak.KpiTxartela?>
+<?import eus.artificialunity.agintekoadroa.osagaiak.SalmentaGrafikoa?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Salmenten bilakaera: lerro-grafikoa aurreikuspenarekin, txartelak eta hileko taula -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="eus.artificialunity.agintekoadroa.kontroladoreak.BilakaeraKontroladorea"
+      styleClass="pantaila" spacing="16" minHeight="600">
+    <TilePane hgap="14" vgap="14" prefColumns="4" prefTileWidth="250" tileAlignment="TOP_LEFT">
+        <KpiTxartela fx:id="aurreikuspenTxartela" izenburua="Aurreikuspena"
+                     laguntza="Hurrengo hilabeteko salmenten aurreikuspena (lerro urdin etena grafikoan)."/>
+        <KpiTxartela fx:id="batezBestekoaTxartela" izenburua="Hileko batez bestekoa"
+                     laguntza="Aldi honetako hilabete bakoitzeko batez besteko salmentak."/>
+        <KpiTxartela fx:id="onenaTxartela" izenburua="Hilabeterik onena"
+                     laguntza="Salmenta gehien izan dituen hilabetea."/>
+        <KpiTxartela fx:id="txarrenaTxartela" izenburua="Hilabeterik txarrena"
+                     laguntza="Salmenta gutxien izan dituen hilabetea."/>
+    </TilePane>
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <VBox styleClass="txartel-zuria" spacing="6" HBox.hgrow="ALWAYS" minHeight="360">
+            <Label text="Salmentak hilabetez hilabete (BEZik gabe)" styleClass="atal-izenburua"/>
+            <SalmentaGrafikoa fx:id="grafikoa" VBox.vgrow="ALWAYS"/>
+            <Label fx:id="aurreikuspenAzalpena" styleClass="azalpen-txikia" wrapText="true"/>
+        </VBox>
+        <VBox styleClass="txartel-zuria" spacing="6" prefWidth="380" minWidth="340">
+            <Label text="Hileko zifrak" styleClass="atal-izenburua"/>
+            <TableView fx:id="taula" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="hilabeteaZutabea" text="Hilabetea" prefWidth="140"/>
+                    <TableColumn fx:id="salmentakZutabea" text="Salmentak" prefWidth="120" styleClass="zenbakia"/>
+                    <TableColumn fx:id="eskaerakZutabea" text="Eskaerak" prefWidth="80" styleClass="zenbakia"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/>
+                </columnResizePolicy>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eus.artificialunity.agintekoadroa.osagaiak.DataIragazkia?>
+<?import eus.artificialunity.agintekoadroa.osagaiak.ErrorePanela?>
+<?import eus.artificialunity.agintekoadroa.osagaiak.KargaGeruza?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<!-- Leiho nagusia: goiburua (logoa eta botoiak), data-iragazkia, ezkerreko menua eta pantailen edukia -->
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="eus.artificialunity.agintekoadroa.kontroladoreak.NagusiaKontroladorea"
+            styleClass="erroa">
+    <top>
+        <VBox>
+            <HBox styleClass="goiburua" alignment="CENTER_LEFT" spacing="14">
+                <ImageView fx:id="logoa" fitHeight="46" preserveRatio="true" smooth="true"/>
+                <VBox alignment="CENTER_LEFT">
+                    <Label text="Aginte-koadroa" styleClass="app-izenburua"/>
+                    <Label text="Salmenten jarraipena, Odoo-ren datuekin" styleClass="app-azpititulua"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="eguneratuBotoia" text="Eguneratu" onAction="#eguneratu" styleClass="botoi-bigarrena">
+                    <graphic>
+                        <SVGPath styleClass="botoi-ikonoa"
+                                 content="M15.65 4.35A7.95 7.95 0 0 0 10 2a8 8 0 1 0 7.75 10h-2.08A6 6 0 1 1 10 4c1.66 0 3.14.69 4.22 1.78L11 9h7V2l-2.35 2.35z"/>
+                    </graphic>
+                </Button>
+                <Button fx:id="pdfBotoia" text="PDF txostena" onAction="#pdfDeskargatu" styleClass="botoi-nagusia">
+                    <graphic>
+                        <SVGPath styleClass="botoi-ikonoa" content="M8 1h4v8h4l-6 6-6-6h4z M2 16h16v3H2z"/>
+                    </graphic>
+                </Button>
+                <Button fx:id="csvBotoia" text="Excel (CSV)" onAction="#csvDeskargatu" styleClass="botoi-nagusia">
+                    <graphic>
+                        <SVGPath styleClass="botoi-ikonoa" content="M8 1h4v8h4l-6 6-6-6h4z M2 16h16v3H2z"/>
+                    </graphic>
+                </Button>
+                <Button fx:id="laguntzaBotoia" text="Laguntza" onAction="#laguntzaIreki" styleClass="botoi-laguntza">
+                    <graphic>
+                        <Label text="?" styleClass="laguntza-ikonoa"/>
+                    </graphic>
+                </Button>
+            </HBox>
+            <HBox styleClass="iragazki-barra" alignment="CENTER_LEFT" spacing="12">
+                <DataIragazkia fx:id="dataIragazkia" onAplikatu="#iragazkiaAplikatu"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="eguneratzeEtiketa" styleClass="eguneratze-etiketa"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <left>
+        <VBox styleClass="menu-panela" spacing="0">
+            <Label text="PANTAILAK" styleClass="menu-izenburua"/>
+            <VBox fx:id="menua" styleClass="menua" spacing="6"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="Laster-teklak: Ctrl+1...7 pantailak, F5 eguneratu, F1 laguntza" styleClass="menu-oharra"
+                   wrapText="true"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="eduki-panela">
+            <VBox styleClass="pantaila-goiburua" spacing="2">
+                <Label fx:id="pantailaIzenburua" styleClass="pantaila-izenburua"/>
+                <Label fx:id="pantailaAzalpena" styleClass="pantaila-azalpena" wrapText="true"/>
+            </VBox>
+            <StackPane VBox.vgrow="ALWAYS">
+                <StackPane fx:id="bistaEdukiontzia"/>
+                <KargaGeruza fx:id="kargaGeruza" visible="false"/>
+                <ErrorePanela fx:id="errorePanela" visible="false" onBerrizSaiatu="#berrizSaiatu"/>
+            </StackPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox styleClass="egoera-barra" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="6" right="16" bottom="6" left="16"/>
+            </padding>
+            <Label fx:id="egoeraEtiketa" text="Datuak kargatzen..."/>
+        </HBox>
+    </bottom>
+</BorderPane>

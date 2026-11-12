@@ -1,0 +1,26 @@
+# =====================================================================
+# Aginte-koadroaren konfigurazioa (Artificial Unity)
+# Erabilera: kopiatu fitxategi hau "konfigurazioa.properties" izenarekin
+# .jar-aren karpeta berean, eta aldatu balioak.
+# Bilaketa-ordena: -Dkonfigurazioa=<bidea>, .jar-aren karpeta, uneko karpeta.
+# =====================================================================
+
+# Zerbitzariaren IZENA (PostgreSQL, Odoo-ren datu-basea). Ez jarri IPa: DHCP
+# bidez alda daiteke; izena PCaren hosts fitxategian ebazten da.
+db.ostalaria=zerbitzaria.artificialunity.eus
+# PostgreSQL-en ataka
+db.ataka=5432
+# Odoo-ren datu-basea
+db.izena=odoo_enpresa
+# Irakurtzeko soilik den erabiltzailea (ez du ezer aldatzen Odoo-n)
+db.erabiltzailea=aginte_irakurlea
+# Erabiltzaile horren pasahitza
+db.pasahitza=ALDATU
+
+# Konexioa itxaroteko segundoak (zerbitzariak erantzuten ez badu)
+db.konexio_denbora=8
+# Kontsulta bakoitza itxaroteko segundoak gehienez
+db.kontsulta_denbora=30
+
+# "Produktu salduenak" pantailan erakutsiko diren produktuak
+produktuak.kopurua=10

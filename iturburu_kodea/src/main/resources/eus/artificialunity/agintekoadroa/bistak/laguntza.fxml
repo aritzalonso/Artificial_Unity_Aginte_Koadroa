@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Laguntza-leihoa: atal bat pantaila bakoitzeko eta atal orokorrak -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="eus.artificialunity.agintekoadroa.kontroladoreak.LaguntzaKontroladorea"
+      styleClass="laguntza" spacing="12">
+    <Label text="Nola erabili aginte-koadroa" styleClass="laguntza-izenburua"/>
+    <Label text="Sakatu galdera bat erantzuna ikusteko. Leiho hau irekita utz dezakezu aplikazioa erabiltzen duzun bitartean."
+           styleClass="azalpen-txikia" wrapText="true"/>
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="laguntza-korritzea">
+        <Accordion fx:id="atalak">
+            <panes>
+                <TitledPane fx:id="hasieraAtala" text="Zertarako da aplikazio hau? Nondik datoz datuak?">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Aginte-koadroak enpresaren salmentak, stocka eta kobratzeko dauden fakturak erakusten ditu, modu errazean.&#10;&#10;Datuak Odoo-tik datoz zuzenean (enpresako kudeaketa-programa), eta aplikazioak ez du ezer aldatzen: begiratzeko bakarrik da.&#10;&#10;Erabili ezkerreko menua pantailaz aldatzeko. Goian aldia aukeratu dezakezu (adibidez &quot;Azken 12 hilabeteak&quot;), eta zifra guztiak aldi horretakoak izango dira.&#10;&#10;Zenbatekoak eurotan daude. Salmentak BEZik gabe; kobratzeko dagoena BEZarekin."/>
+                </TitledPane>
+                <TitledPane fx:id="laburpenaAtala" text="Laburpena pantaila">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Txartel bakoitzak zifra garrantzitsu bat erakusten du.&#10;&#10;• Berdea: ondo doa. Laranja: kontuz. Gorria: zerbait egin behar da.&#10;• &quot;Salmentak guztira&quot; txartelak aurreko aldi berdinarekin alderatzen du (adibidez, aurreko 12 hilabeteekin).&#10;• &quot;Kobratzeko zain&quot;, &quot;Stock baxuko produktuak&quot; eta &quot;Hurrengo hilabetea&quot; txartelak sakatu daitezke: xehetasunen pantailara eramaten zaituzte.&#10;&#10;Eskuineko &quot;Kontuan hartzekoak&quot; zerrendan abisuak daude, bakoitza bere botoiarekin."/>
+                </TitledPane>
+                <TitledPane fx:id="bilakaeraAtala" text="Salmenten bilakaera pantaila (eta aurreikuspena)">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Lerro moreak hilabete bakoitzeko salmentak erakusten ditu. Jarri sagua puntu baten gainean zifra zehatza ikusteko.&#10;&#10;Lerro urdin etena hurrengo hilabeterako aurreikuspena da. Azken hilabeteen joera kalkulatzen da (lerro zuzen bat) eta hurrengo hilabetera luzatzen da. Gutxi gorabeherako zifra da: ez ditu kontuan hartzen Gabonak, kanpainak edo antzekoak.&#10;&#10;Eskuineko taulan hilabete bakoitzeko zifrak daude."/>
+                </TitledPane>
+                <TitledPane fx:id="produktuakAtala" text="Produktu salduenak pantaila">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Gehien saldu diren produktuak, onena goian.&#10;&#10;Goiko botoiekin aukeratu zer ikusi: &quot;Unitateak&quot; (zenbat pieza) edo &quot;Eurotan&quot; (zenbat diru).&#10;&#10;Beheko taulan produktuaren izen osoa eta zifrak daude. Zutabe baten izenean klik eginez taula ordenatu daiteke."/>
+                </TitledPane>
+                <TitledPane fx:id="bezeroakAtala" text="Bezeroak pantaila">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Ezkerrean, gehien erosi duten 10 bezeroak. Eskuinean, bezero guztiak.&#10;&#10;Bezero bat aurkitzeko, idatzi bere izenaren edo herriaren zati bat bilatzailean (adibidez &quot;Donostia&quot;)."/>
+                </TitledPane>
+                <TitledPane fx:id="kategoriakAtala" text="Kategoriak pantaila">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Salmentak produktu motaren arabera (eramangarriak, pantailak, osagarriak...). Tartako zati bakoitza kategoria bat da, bere ehunekoarekin. Taulan zifra zehatzak daude."/>
+                </TitledPane>
+                <TitledPane fx:id="stockaAtala" text="Stocka pantaila">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Biltegian gaur dagoena. Produktu bakoitzak gutxieneko kopuru bat du (minimoa).&#10;&#10;• &quot;Baxua&quot; (gorria): minimotik behera dago; erosketa-arduradunari abisatu behar zaio.&#10;• Barrak erakusten du biltegia zenbateraino dagoen beteta. Jarri sagua gainean xehetasunak ikusteko.&#10;• Markatu &quot;Stock baxukoak bakarrik erakutsi&quot; arazoak dituztenak bakarrik ikusteko.&#10;&#10;Stocka ez dago data-iragazkiaren menpe: beti gaurkoa da."/>
+                </TitledPane>
+                <TitledPane fx:id="fakturakAtala" text="Kobratzeko fakturak pantaila">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Bezeroek oraindik ordaindu ez dituzten fakturak.&#10;&#10;• &quot;Berandu&quot; (gorria): ordaintzeko eguna (muga-eguna) pasatu da. Komeni da bezeroari deitzea.&#10;• &quot;Garaiz&quot; (berdea): oraindik ordaintzeko epean dago.&#10;• Markatu &quot;Berandu daudenak bakarrik erakutsi&quot; horiek bakarrik ikusteko."/>
+                </TitledPane>
+                <TitledPane text="Nola aukeratu datak?">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="Goiko &quot;Aldia&quot; zerrendan aukeratu aldi bat (Azken 12 hilabeteak, Hilabete hau, Aurten, Iaz...). Berehala eguneratzen da.&#10;&#10;Beste data batzuk nahi badituzu, aukeratu egutegietan hasiera eta amaiera, eta sakatu &quot;Erakutsi&quot;. Bi egunak barne daude.&#10;&#10;Amaiera hasiera baino lehenagokoa bada, mezu gorri bat agertuko da."/>
+                </TitledPane>
+                <TitledPane text="Nola deskargatu txosten bat?">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="• &quot;PDF txostena&quot;: txosten osoa (zifrak, grafikoa eta taula guztiak), inprimatzeko edo bidaltzeko.&#10;• &quot;Excel (CSV)&quot;: ikusten ari zaren pantailako datuak, Excel-en irekitzeko.&#10;&#10;Botoia sakatu, aukeratu non gorde, eta sakatu &quot;Gorde&quot;. Amaitzean &quot;Ireki&quot; botoia agertuko da."/>
+                </TitledPane>
+                <TitledPane text="Mezu gorri bat agertu da: zer egin?">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="• &quot;Ezin da zerbitzariarekin konektatu&quot;: egiaztatu ordenagailua sarera konektatuta dagoela (kablea edo Wi-Fia) eta enpresako zerbitzaria piztuta dagoela. Gero sakatu &quot;Berriro saiatu&quot;.&#10;• &quot;Zerbitzariak ez du sarbidea onartu&quot; edo &quot;Konfigurazioan arazo bat dago&quot;: abisatu informatikariari (konfigurazio-fitxategia zuzendu behar da).&#10;&#10;Informatikariak &quot;Xehetasun teknikoak&quot; atala eta logs karpeta begira ditzake."/>
+                </TitledPane>
+                <TitledPane text="Laster-teklak">
+                    <Label wrapText="true" styleClass="laguntza-testua" text="• Ctrl+1 ... Ctrl+7: pantailak (menuko ordenan)&#10;• F5: datuak eguneratu&#10;• Ctrl+P: PDF txostena gorde&#10;• Ctrl+E: pantaila honetako datuak Excel-erako gorde&#10;• F1: laguntza hau"/>
+                </TitledPane>
+            </panes>
+        </Accordion>
+    </ScrollPane>
+    <HBox alignment="CENTER_RIGHT">
+        <Label text="Arazorik baduzu: informatika saila (Unax Muñoz)" styleClass="azalpen-txikia"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Itxi" onAction="#itxi" styleClass="botoi-nagusia" defaultButton="true"/>
+    </HBox>
+</VBox>

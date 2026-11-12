@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Bezeroak: 10 bezero onenen grafikoa eta bezero guztien taula (bilatzailearekin) -->
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="eus.artificialunity.agintekoadroa.kontroladoreak.BezeroakKontroladorea"
+      styleClass="pantaila" spacing="16" minHeight="620">
+    <VBox styleClass="txartel-zuria" spacing="8" HBox.hgrow="ALWAYS" minWidth="420">
+        <Label text="Gehien erosi duten bezeroak (BEZik gabe)" styleClass="atal-izenburua"/>
+        <BarChart fx:id="grafikoa" VBox.vgrow="ALWAYS" styleClass="barra-grafikoa">
+            <xAxis>
+                <NumberAxis fx:id="balioArdatza" side="BOTTOM" label="Salmentak (€)" forceZeroInRange="true"/>
+            </xAxis>
+            <yAxis>
+                <CategoryAxis fx:id="bezeroArdatza" side="LEFT"/>
+            </yAxis>
+        </BarChart>
+    </VBox>
+    <VBox styleClass="txartel-zuria" spacing="8" HBox.hgrow="ALWAYS" minWidth="480">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Bezero guztiak" styleClass="atal-izenburua"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="kopuruaEtiketa" styleClass="azalpen-txikia"/>
+        </HBox>
+        <TextField fx:id="bilatzailea" promptText="Bilatu bezeroa edo herria..." styleClass="bilatzailea">
+            <tooltip>
+                <Tooltip text="Idatzi bezeroaren izenaren edo herriaren zati bat zerrenda iragazteko"/>
+            </tooltip>
+        </TextField>
+        <TableView fx:id="taula" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="bezeroaZutabea" text="Bezeroa" prefWidth="220"/>
+                <TableColumn fx:id="herriaZutabea" text="Herria" prefWidth="130"/>
+                <TableColumn fx:id="eskaerakZutabea" text="Eskaerak" prefWidth="85" styleClass="zenbakia"/>
+                <TableColumn fx:id="salmentakZutabea" text="Salmentak" prefWidth="130" styleClass="zenbakia"/>
+                <TableColumn fx:id="azkenaZutabea" text="Azken eskaera" prefWidth="120"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/>
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+</HBox>

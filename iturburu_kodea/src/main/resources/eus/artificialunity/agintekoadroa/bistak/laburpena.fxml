@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eus.artificialunity.agintekoadroa.osagaiak.KpiTxartela?>
+<?import eus.artificialunity.agintekoadroa.osagaiak.SalmentaGrafikoa?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Laburpena: adierazle-txartelak, salmenten grafiko txikia eta abisuak -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="eus.artificialunity.agintekoadroa.kontroladoreak.LaburpenaKontroladorea"
+      styleClass="pantaila" spacing="16" minHeight="600">
+    <TilePane hgap="14" vgap="14" prefColumns="4" prefTileWidth="250" tileAlignment="TOP_LEFT">
+        <KpiTxartela fx:id="salmentakTxartela" izenburua="Salmentak guztira"
+                     laguntza="Aukeratutako aldiko salmentak (BEZik gabe), aurreko aldi berdinarekin alderatuta."/>
+        <KpiTxartela fx:id="eskaerakTxartela" izenburua="Salmenta-eskaerak"
+                     laguntza="Baieztatutako salmenta-eskaeren kopurua aldi honetan."/>
+        <KpiTxartela fx:id="batezBestekoaTxartela" izenburua="Batez besteko eskaera"
+                     laguntza="Eskaera bakoitzaren batez besteko zenbatekoa (salmentak / eskaerak)."/>
+        <KpiTxartela fx:id="bezeroakTxartela" izenburua="Bezeroak"
+                     laguntza="Aldi honetan gutxienez eskaera bat egin duten bezero desberdinak."/>
+        <KpiTxartela fx:id="kobratzekoTxartela" izenburua="Kobratzeko zain" onAction="#fakturakIkusi"
+                     laguntza="Bezeroek gaur ordaintzeko duten guztia (BEZarekin). Sakatu fakturak ikusteko."/>
+        <KpiTxartela fx:id="stockTxartela" izenburua="Stock baxuko produktuak" onAction="#stockaIkusi"
+                     laguntza="Minimotik behera dauden produktuak. Sakatu stocka ikusteko."/>
+        <KpiTxartela fx:id="aurreikuspenTxartela" izenburua="Hurrengo hilabetea" onAction="#bilakaeraIkusi"
+                     laguntza="Hurrengo hilabeteko salmenten aurreikuspena, azken hilabeteen joeraren arabera. Sakatu xehetasunak ikusteko."/>
+    </TilePane>
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <VBox styleClass="txartel-zuria" spacing="6" HBox.hgrow="ALWAYS" minHeight="280">
+            <Label text="Salmentak hileka" styleClass="atal-izenburua"/>
+            <SalmentaGrafikoa fx:id="grafikoa" VBox.vgrow="ALWAYS" legendVisible="true"/>
+        </VBox>
+        <VBox styleClass="txartel-zuria" spacing="12" prefWidth="380" minWidth="320" maxWidth="420">
+            <Label text="Kontuan hartzekoak" styleClass="atal-izenburua"/>
+            <VBox fx:id="abisuZerrenda" spacing="12"/>
+        </VBox>
+    </HBox>
+</VBox>

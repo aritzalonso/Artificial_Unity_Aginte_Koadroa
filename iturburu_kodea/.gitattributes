@@ -1,0 +1,3 @@
+# mvnw Linux/macOS-en exekutatzeko LF behar du; mvnw.cmd Windows-erako CRLF
+mvnw text eol=lf
+*.cmd text eol=crlf

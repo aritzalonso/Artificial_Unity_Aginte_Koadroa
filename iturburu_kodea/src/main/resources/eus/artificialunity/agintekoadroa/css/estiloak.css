@@ -1,0 +1,657 @@
+/* =====================================================================
+   Artificial Unity - Aginte-koadroaren estiloak
+   Koloreak: morea #4F46E5 (nagusia), ziana #06B6D4 (bigarrena)
+   Letra handiak eta kontraste ona, informatikan ohituta ez dagoen erabiltzailearentzat.
+   ===================================================================== */
+
+.root {
+    -au-morea: #4F46E5;
+    -au-morea-iluna: #3730A3;
+    -au-morea-argia: #EEF2FF;
+    -au-ziana: #06B6D4;
+    -au-ziana-argia: #ECFEFF;
+    -au-testua: #1F2937;
+    -au-grisa: #6B7280;
+    -au-ertza: #E5E7EB;
+    -au-atzealdea: #F4F6FB;
+    -au-berdea: #15803D;
+    -au-berde-argia: #DCFCE7;
+    -au-laranja: #B45309;
+    -au-laranja-argia: #FEF3C7;
+    -au-gorria: #B91C1C;
+    -au-gorri-argia: #FEE2E2;
+
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 15px;
+    -fx-text-fill: -au-testua;
+    -fx-accent: -au-morea;
+    -fx-focus-color: -au-morea;
+    -fx-faint-focus-color: #4F46E522;
+}
+
+.erroa {
+    -fx-background-color: -au-atzealdea;
+}
+
+/* --- Goiburua --- */
+.goiburua {
+    -fx-background-color: white;
+    -fx-padding: 12 20 12 20;
+    -fx-border-color: transparent transparent -au-ertza transparent;
+}
+
+.app-izenburua {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-morea-iluna;
+}
+
+.app-azpititulua {
+    -fx-font-size: 13px;
+    -fx-text-fill: -au-grisa;
+}
+
+.iragazki-barra {
+    -fx-background-color: linear-gradient(to right, -au-morea-argia, -au-ziana-argia);
+    -fx-padding: 10 20 10 20;
+    -fx-border-color: transparent transparent -au-ertza transparent;
+}
+
+.iragazki-etiketa {
+    -fx-font-weight: bold;
+}
+
+.iragazki-mezua {
+    -fx-text-fill: -au-gorria;
+    -fx-font-weight: bold;
+}
+
+.eguneratze-etiketa {
+    -fx-text-fill: -au-grisa;
+    -fx-font-size: 13px;
+}
+
+.data-hautatzailea.okerra .text-field {
+    -fx-border-color: -au-gorria;
+    -fx-border-width: 2;
+}
+
+/* --- Botoiak --- */
+.button, .toggle-button {
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+    -fx-padding: 9 16 9 16;
+    -fx-background-radius: 8;
+}
+
+.botoi-nagusia {
+    -fx-background-color: -au-morea;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.botoi-nagusia:hover {
+    -fx-background-color: -au-morea-iluna;
+}
+
+.botoi-nagusia:disabled {
+    -fx-opacity: 0.45;
+}
+
+.botoi-bigarrena {
+    -fx-background-color: white;
+    -fx-text-fill: -au-morea;
+    -fx-border-color: -au-morea;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-font-weight: bold;
+}
+
+.botoi-bigarrena:hover {
+    -fx-background-color: -au-morea-argia;
+}
+
+.botoi-laguntza {
+    -fx-background-color: -au-ziana;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.botoi-laguntza:hover {
+    -fx-background-color: #0891B2;
+}
+
+.botoi-handia {
+    -fx-font-size: 17px;
+    -fx-padding: 12 28 12 28;
+}
+
+.botoi-ikonoa {
+    -fx-scale-x: 0.85;
+    -fx-scale-y: 0.85;
+}
+
+.botoi-nagusia .botoi-ikonoa {
+    -fx-fill: white;
+}
+
+.botoi-bigarrena .botoi-ikonoa {
+    -fx-fill: -au-morea;
+}
+
+.laguntza-ikonoa {
+    -fx-text-fill: -au-ziana;
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-min-width: 20;
+    -fx-min-height: 20;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.aukera-botoia {
+    -fx-background-color: white;
+    -fx-border-color: -au-morea;
+    -fx-border-radius: 8;
+    -fx-text-fill: -au-morea;
+}
+
+.aukera-botoia:selected {
+    -fx-background-color: -au-morea;
+    -fx-text-fill: white;
+}
+
+/* --- Ezkerreko menua --- */
+.menu-panela {
+    -fx-background-color: white;
+    -fx-padding: 18 12 14 12;
+    -fx-pref-width: 240;
+    -fx-border-color: transparent -au-ertza transparent transparent;
+}
+
+.menu-izenburua {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-grisa;
+    -fx-padding: 0 0 8 10;
+}
+
+.menu-botoia {
+    -fx-alignment: center-left;
+    -fx-background-color: transparent;
+    -fx-text-fill: -au-testua;
+    -fx-font-size: 16px;
+    -fx-padding: 13 16 13 16;
+    -fx-background-radius: 10;
+}
+
+.menu-botoia:hover {
+    -fx-background-color: -au-morea-argia;
+}
+
+.menu-botoia:selected {
+    -fx-background-color: -au-morea;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.menu-oharra {
+    -fx-font-size: 12px;
+    -fx-text-fill: -au-grisa;
+    -fx-padding: 10 6 0 6;
+}
+
+/* --- Edukia --- */
+.eduki-panela {
+    -fx-background-color: -au-atzealdea;
+}
+
+.pantaila-goiburua {
+    -fx-padding: 16 24 4 24;
+}
+
+.pantaila-izenburua {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-testua;
+}
+
+.pantaila-azalpena {
+    -fx-font-size: 15px;
+    -fx-text-fill: -au-grisa;
+}
+
+/* -fx-background ez da gardena izan behar: JavaFX-ek hortik kalkulatzen du etiketen testu-kolorea */
+.pantaila-korritzea, .pantaila-korritzea > .viewport {
+    -fx-background-color: transparent;
+    -fx-background: -au-atzealdea;
+}
+
+.pantaila {
+    -fx-padding: 12 24 20 24;
+}
+
+.aldi-etiketa {
+    -fx-text-fill: -au-grisa;
+    -fx-font-size: 14px;
+}
+
+.txartel-zuria {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: -au-ertza;
+    -fx-border-radius: 12;
+    -fx-padding: 16;
+}
+
+.atal-izenburua {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-testua;
+}
+
+.azalpen-txikia {
+    -fx-font-size: 13px;
+    -fx-text-fill: -au-grisa;
+}
+
+.egoera-barra {
+    -fx-background-color: white;
+    -fx-border-color: -au-ertza transparent transparent transparent;
+}
+
+.egoera-barra .label {
+    -fx-font-size: 13px;
+    -fx-text-fill: -au-grisa;
+}
+
+/* --- KPI txartela (osagai pertsonalizatua) --- */
+.kpi-txartela {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: -au-ertza -au-ertza -au-ertza -au-morea;
+    -fx-border-width: 1 1 1 6;
+    -fx-border-radius: 12;
+    -fx-padding: 14 18 14 18;
+    -fx-spacing: 4;
+    -fx-min-height: 128;
+    -fx-effect: dropshadow(gaussian, #1F293714, 10, 0, 0, 2);
+}
+
+.kpi-izenburua {
+    -fx-font-size: 14px;
+    -fx-text-fill: -au-grisa;
+    -fx-font-weight: bold;
+}
+
+.kpi-balioa {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-testua;
+}
+
+.kpi-azalpena {
+    -fx-font-size: 13px;
+    -fx-text-fill: -au-grisa;
+}
+
+.kpi-ona {
+    -fx-border-color: -au-ertza -au-ertza -au-ertza -au-berdea;
+}
+
+.kpi-ona .kpi-azalpena {
+    -fx-text-fill: -au-berdea;
+    -fx-font-weight: bold;
+}
+
+.kpi-abisua {
+    -fx-border-color: -au-ertza -au-ertza -au-ertza #F59E0B;
+}
+
+.kpi-abisua .kpi-azalpena {
+    -fx-text-fill: -au-laranja;
+    -fx-font-weight: bold;
+}
+
+.kpi-arriskua {
+    -fx-border-color: -au-ertza -au-ertza -au-ertza -au-gorria;
+    -fx-background-color: #FFFBFB;
+}
+
+.kpi-arriskua .kpi-azalpena {
+    -fx-text-fill: -au-gorria;
+    -fx-font-weight: bold;
+}
+
+.kpi-klikagarria:hover {
+    -fx-background-color: -au-morea-argia;
+}
+
+.kpi-klikagarria:focused {
+    -fx-border-color: -au-morea;
+}
+
+/* --- Abisuak (laburpena) --- */
+.abisu-lerroa {
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+}
+
+.abisu-lerroa-arriskua {
+    -fx-background-color: -au-gorri-argia;
+}
+
+.abisu-lerroa-abisua {
+    -fx-background-color: -au-laranja-argia;
+}
+
+.abisu-ikonoa {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-alignment: center;
+    -fx-background-radius: 14;
+}
+
+.abisu-ikonoa-arriskua {
+    -fx-background-color: -au-gorria;
+}
+
+.abisu-ikonoa-abisua {
+    -fx-background-color: #F59E0B;
+}
+
+.abisu-testua {
+    -fx-font-size: 15px;
+    -fx-text-fill: -au-testua;
+}
+
+.abisu-ondo {
+    -fx-text-fill: -au-berdea;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+/* --- Bandak (stocka) --- */
+.banda {
+    -fx-padding: 14 18 14 18;
+    -fx-background-radius: 10;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.banda-arriskua {
+    -fx-background-color: -au-gorri-argia;
+    -fx-text-fill: -au-gorria;
+}
+
+.banda-ondo {
+    -fx-background-color: -au-berde-argia;
+    -fx-text-fill: -au-berdea;
+}
+
+/* --- Taulak --- */
+.table-view {
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+    -fx-border-color: -au-ertza;
+    -fx-table-cell-border-color: #F1F5F9;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: -au-morea-argia;
+    -fx-size: 38;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-morea-iluna;
+}
+
+.table-row-cell {
+    -fx-cell-size: 36;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -au-morea;
+}
+
+.table-row-cell.lerro-abisua {
+    -fx-background-color: -au-gorri-argia;
+}
+
+.table-row-cell.lerro-abisua:selected {
+    -fx-background-color: -au-gorria;
+}
+
+.table-cell {
+    -fx-alignment: center-left;
+}
+
+.table-column.zenbakia {
+    -fx-alignment: center-right;
+}
+
+.egoera-pilula {
+    -fx-padding: 2 10 2 10;
+    -fx-background-radius: 12;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.egoera-abisua {
+    -fx-background-color: -au-gorria;
+    -fx-text-fill: white;
+}
+
+.egoera-ondo {
+    -fx-background-color: -au-berde-argia;
+    -fx-text-fill: -au-berdea;
+}
+
+.stock-barra-ondo .bar {
+    -fx-background-color: -au-ziana;
+    -fx-background-insets: 1;
+    -fx-background-radius: 6;
+}
+
+.stock-barra-baxua .bar {
+    -fx-background-color: -au-gorria;
+    -fx-background-insets: 1;
+    -fx-background-radius: 6;
+}
+
+.progress-bar .track {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 6;
+}
+
+.bilatzailea {
+    -fx-font-size: 15px;
+    -fx-padding: 8 12 8 12;
+}
+
+/* --- Grafikoak --- */
+.chart {
+    -fx-padding: 6;
+}
+
+.chart-plot-background {
+    -fx-background-color: white;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #EEF0F4;
+}
+
+.axis {
+    -fx-tick-label-font-size: 13px;
+    -fx-tick-label-fill: -au-grisa;
+}
+
+.axis-label {
+    -fx-text-fill: -au-grisa;
+    -fx-font-size: 13px;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+}
+
+.salmenta-grafikoa .default-color0.chart-series-line {
+    -fx-stroke: -au-morea;
+    -fx-stroke-width: 3px;
+}
+
+.salmenta-grafikoa .default-color0.chart-line-symbol {
+    -fx-background-color: -au-morea, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px;
+}
+
+.salmenta-grafikoa .default-color1.chart-series-line {
+    -fx-stroke: -au-ziana;
+    -fx-stroke-width: 3px;
+    -fx-stroke-dash-array: 10 7;
+}
+
+.salmenta-grafikoa .default-color1.chart-line-symbol {
+    -fx-background-color: -au-ziana, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 7px;
+    -fx-padding: 7px;
+}
+
+.grafiko-irudia {
+    -fx-background-color: white;
+    -fx-padding: 8;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.barra-grafikoa .default-color0.chart-bar {
+    -fx-bar-fill: -au-morea;
+    -fx-background-radius: 0 6 6 0;
+}
+
+.barra-grafikoa .chart-bar:hover {
+    -fx-bar-fill: -au-ziana;
+}
+
+.tarta-grafikoa .default-color0.chart-pie { -fx-pie-color: #4F46E5; }
+.tarta-grafikoa .default-color1.chart-pie { -fx-pie-color: #06B6D4; }
+.tarta-grafikoa .default-color2.chart-pie { -fx-pie-color: #818CF8; }
+.tarta-grafikoa .default-color3.chart-pie { -fx-pie-color: #67E8F9; }
+.tarta-grafikoa .default-color4.chart-pie { -fx-pie-color: #3730A3; }
+.tarta-grafikoa .default-color5.chart-pie { -fx-pie-color: #0E7490; }
+.tarta-grafikoa .default-color6.chart-pie { -fx-pie-color: #C7D2FE; }
+.tarta-grafikoa .default-color7.chart-pie { -fx-pie-color: #A5F3FC; }
+
+.chart-pie-label {
+    -fx-font-size: 14px;
+    -fx-fill: -au-testua;
+}
+
+/* --- Karga eta erroreak (osagai pertsonalizatuak) --- */
+.karga-geruza {
+    -fx-background-color: #F4F6FBCC;
+}
+
+.karga-kutxa {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 30 44 30 44;
+    -fx-effect: dropshadow(gaussian, #1F293733, 20, 0, 0, 4);
+}
+
+.karga-mezua {
+    -fx-font-size: 17px;
+    -fx-text-fill: -au-testua;
+}
+
+.errore-panela {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: -au-gorri-argia;
+    -fx-border-width: 2;
+    -fx-border-radius: 14;
+    -fx-padding: 32 40 28 40;
+    -fx-effect: dropshadow(gaussian, #1F293733, 24, 0, 0, 4);
+}
+
+.errore-ikonoa {
+    -fx-background-color: -au-gorria;
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-alignment: center;
+    -fx-background-radius: 28;
+}
+
+.errore-izenburua {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-gorria;
+}
+
+.errore-mezua {
+    -fx-font-size: 16px;
+    -fx-text-alignment: center;
+}
+
+/* --- Laguntza --- */
+.laguntza {
+    -fx-background-color: white;
+    -fx-padding: 20;
+}
+
+.laguntza-izenburua {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -au-morea-iluna;
+}
+
+.laguntza-testua {
+    -fx-font-size: 15px;
+    -fx-line-spacing: 3px;
+}
+
+.laguntza-korritzea, .laguntza-korritzea > .viewport {
+    -fx-background-color: white;
+    -fx-background: white;
+}
+
+.titled-pane > .title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 12 10 12;
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: -au-morea-iluna;
+}
+
+.titled-pane > .content {
+    -fx-padding: 12 18 16 18;
+}
+
+.tooltip {
+    -fx-font-size: 14px;
+    -fx-background-color: #1F2937;
+    -fx-text-fill: white;
+    -fx-padding: 8 10 8 10;
+}
+
+.combo-box, .date-picker {
+    -fx-font-size: 15px;
+}
